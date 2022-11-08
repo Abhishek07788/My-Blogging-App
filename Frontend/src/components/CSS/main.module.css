@@ -1,0 +1,21 @@
+.signupform {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.signupform > input{
+  border-bottom: 1px solid black;
+  background: #ffffff;
+}
+
+.signupform > select {
+  border: 1px solid black;
+  background: #ffffff;
+}
+.maindiv{
+    padding-top: 70px;
+}
+

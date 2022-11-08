@@ -1,0 +1,70 @@
+.InterviewDIV {
+    padding-top: 70px;
+  }
+  
+  .InterviewDiv1 {
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    padding-right: 14%;
+  }
+  
+  .InterviewImg {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .InterviewDIV {
+    background-image: url("../Image/interviewQnsImg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding-bottom: 80px;
+  }
+  
+  .InterviewTop{
+    background-image: url("../Image/caedImg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+  .addTaskForm{
+    background: #e0dad9;
+    display: grid;
+    gap: 8px;
+    padding: 14px;
+  }
+  
+  .addTaskForm> input{
+    border-bottom: 1px solid black;
+    background: #ffffff;
+    color: black;
+  }
+  
+  .addTaskForm> select{
+    border: 1px solid black;
+    background: #fcf69c;
+    color: black;
+    height: 40px;
+    border-radius: 10px;
+  }
+  
+  .addTaskForm>button{
+    background: teal;
+    color: #ffffff;
+    width: 300px;
+    margin:auto;
+  }
+  
+  .addTaskForm>button:hover{
+    background: black;
+    color: #ffffff;
+    width: 300px;
+    margin:auto;
+  }

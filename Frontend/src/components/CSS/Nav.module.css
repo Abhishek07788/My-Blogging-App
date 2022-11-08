@@ -1,0 +1,19 @@
+.active {
+  color: red;
+  transition: all .4s ease-in-out;
+  transform: scale(1.2);
+}
+.active:hover {
+  color: teal;
+}
+.notActive:hover {
+  color: teal;
+}
+.notActive {
+  color: black;
+}
+
+.Navdiv>div{
+  position: fixed;
+  z-index: 100;
+}
