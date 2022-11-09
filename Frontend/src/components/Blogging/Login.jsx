@@ -42,7 +42,7 @@ const handleSubmit = (e) =>{
   e.preventDefault()
   logIN(form).then((res)=>{
     // console.log(res.data)
-    localStorage.setItem("token",JSON.stringify(jwt_decode(res.data.token)))
+    localStorage.setItem("token",(res.data.token))
     handleLogin(res.data.token)
     if(res.data.token){
     Toast({
