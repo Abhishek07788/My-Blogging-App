@@ -18,6 +18,7 @@ import { logIN } from "../Api/api";
 import { useContext } from "react";
 import { AppContext } from "../Private/Appcontextprovider";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import jwt_decode from "jwt-decode";
 
 
 const InitialState = {
@@ -41,8 +42,8 @@ const handleSubmit = (e) =>{
   e.preventDefault()
   logIN(form).then((res)=>{
     // console.log(res.data)
-    localStorage.setItem("token",JSON.stringify(res.data))
-    handleLogin(res.data)
+    localStorage.setItem("token",JSON.stringify(jwt_decode(res.data.token)))
+    handleLogin(res.data.token)
     if(res.data.token){
     Toast({
       title: `${res.data.message} 😊`,
@@ -62,6 +63,13 @@ const handleSubmit = (e) =>{
   }
   }).catch((e)=>{
     console.log(e)
+    Toast({
+      title: e.message+"☹️",
+        status: "error",
+        duration: 2000,
+        isClosable: true,
+        position: "top",
+      })
   })
 }
 

@@ -4,11 +4,10 @@ import { createContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 let Apitoken = JSON.parse(localStorage.getItem("token")) || ""
-// console.log('Apitoken: ', Apitoken);
 
 export const AppContext = createContext();
 const Appcontextprovider = ({children}) => {
-    const [token, setToken] = useState(Apitoken.token)
+    const [token, setToken] = useState(Apitoken.email)
     const [name, setName] = useState(Apitoken.name)
     const [role, setRole] = useState(Apitoken.role)
 
@@ -16,10 +15,8 @@ const Appcontextprovider = ({children}) => {
     const navigate = useNavigate()
 
     const handleLogin = (data) =>{
-        if(data.token){
-        setName(data.name)
-        setToken(data.token)
-        setRole(data.role)
+        if(data){
+        setToken(Apitoken.email)
         navigate("/news")
         }
     }
