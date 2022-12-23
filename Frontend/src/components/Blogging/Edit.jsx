@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { addInterview, addNews} from '../Api/api'
 import style from '../CSS/news.module.css'
-import { Box, Button, Heading, Input, useToast } from '@chakra-ui/react'
+import { Box, Button, Heading, Input, useToast, Textarea } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { AppContext } from '../Private/Appcontextprovider'
 
@@ -83,7 +83,7 @@ const Edit = () => {
       <Input required placeholder='newsAuthor - InterviewAuthor' type="text" value={author} name="author" onChange={handleChange}/>
       <Input  placeholder='newsWebsiteName' type="text" value={website} name="website" onChange={handleChange}/>
       <Input required placeholder='newsTitle - InterviewQ..' type="text" value={title} name="title" onChange={handleChange}/>
-      <Input required placeholder='newsContent - InterviewAns' type="text" value={content} name="content" onChange={handleChange}/>
+      <Textarea bg="#ffff" borderBottom={"1px"} rows="2" required placeholder='newsContent - InterviewAns' type="text" value={content} name="content" onChange={handleChange}/>
       <Input  placeholder='NewsDescription' type="text" value={description} name="description" onChange={handleChange}/>
       <Input  placeholder='NewsUrl' type="url" value={url} name="url" onChange={handleChange}/>
       <Button type='submit'>ADD</Button>

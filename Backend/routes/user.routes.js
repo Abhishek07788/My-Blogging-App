@@ -4,6 +4,15 @@ const User = require("../schema/user.schema");
 
 const app = express();
 
+app.get("/", async (req, res) => {
+  try {
+    const oldUser = await User.findOne();
+    return res.send({ oldUser });
+  } catch (e) {
+    return res.status(404).send({ error: e });
+  }
+});
+
 app.post("/signup", async (req, res) => {
   const { name, email, password, role } = req.body;
   const oldUser = await User.findOne({ email });
@@ -36,18 +45,13 @@ app.post("/signin", async (req, res) => {
       role: user.role,
     },
     "ABHITHAKUR",
-    { expiresIn: "5 minutes" }
+    { expiresIn: "30 days" }
   );
 
-  const refreshtoken = jwt.sign({}, "REFRESH");
+  // const refreshtoken = jwt.sign({}, "REFRESH");
 
   res.send({
-    name: user.name,
-    email: user.email,
     token: token,
-    status: true,
-    refreshtoken:refreshtoken,
-    role: user.role,
     message:
       user.role === "user"
         ? `You have login Successfully`

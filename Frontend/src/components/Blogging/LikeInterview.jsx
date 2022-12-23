@@ -45,7 +45,7 @@ const LikeInterview = ({content,author, _id, handleDelete, title, date}) => {
       <Box textAlign={"left"} ml="5" mr="5"> 
       <Heading color={"#dc143c"} pt="2" as="h2" fontSize={13}>{author || ""} : {" "}<span style={{color:"black", fontSize:"10px"}}>{date}</span></Heading>
       <Heading mt="4" as="h1" fontSize={22}>Q. {title || ""}</Heading>
-      <Text fontSize={19} mb="5" className={style.description} >{content  || ""}</Text>
+      <p style={{fontSize:"19px", marginBottom:"2rem",  whiteSpace: "pre-line" }} className={style.description} >{content  || ""}</p>
           
     <Box fontSize={30}>
     <Button color={like === 1? "blue" : "black"} fontSize={25} onClick={handleLike}><AiFillLike /></Button>
